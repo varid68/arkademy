@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <input type="number" id="angka">
+  <button type="button" onclick="hitung()">Hitung</button>
+</body>
+
+
+<script>
+  function hitung() {
+    let uang = document.getElementById('angka').value
+    const pecah = [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500]
+
+    if (uang >= 100000) {
+      let nilai_uang = Math.floor(uang / 100000)
+      console.log(`${nilai_uang} lembar uang 100.000`)
+    }
+
+    for (let index = 0; index < pecah.length; index++) {
+      uang = uang % pecah[index];
+      if (uang >= pecah[index + 1] && uang < pecah[index]) {
+        let nilai_uang = Math.floor(uang / pecah[index + 1])
+        console.log(`${nilai_uang} lembar uang ${pecah[index + 1]}`)
+      }
+    }
+  }
+</script>
+
+</html>

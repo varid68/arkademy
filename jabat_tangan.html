@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <input type="text" id="angka">
+  <button type="button" id="hitung-btn" onclick="hitung()">Hitung</button>
+</body>
+
+<script>
+  function hitung() {
+    const val = document.getElementById('angka').value;
+    let count = 0
+    for (let index = val - 1; index > 0; index--) {
+      count = count + index
+    }
+
+    document.write(`jumlah jabat tangan dari ${val} orang adalah ${count}`)
+  }
+</script>
+
+</html>
